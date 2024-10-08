@@ -1,10 +1,16 @@
 // Import required modules
 const express = require('express');
 const cors = require('cors');
+const dotenv = require('dotenv');
+const connectDB = require("../config/db.js");
 
 // Create an instance of the Express app
 const app = express();
 const PORT = process.env.PORT || 5000; // Use port from environment or default to 5000
+
+//MongoDB Connection
+dotenv.config();
+connectDB();
 
 // Middleware
 app.use(cors()); // Enable CORS for all requests
