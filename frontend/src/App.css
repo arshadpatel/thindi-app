@@ -36,3 +36,18 @@
     transform: rotate(360deg);
   }
 }
+
+.chart-container {
+  width: 80%;
+  max-width: 800px;
+  margin: 20px auto; /* Center the chart */
+  padding: 20px; /* Add some padding around the chart */
+  background-color: rgba(255, 255, 255, 0.1); /* Slightly transparent background */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add a shadow for depth */
+}
+
+  to {
+    transform: rotate(360deg);
+  }
+}
