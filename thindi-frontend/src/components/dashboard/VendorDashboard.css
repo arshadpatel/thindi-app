@@ -1,0 +1,182 @@
+/* Colours come from CSS variables set on .vdash by VendorDashboard.jsx, so the
+   cards follow the same light/dark values as the charts. */
+.vdash {
+  padding: 24px 24px 48px;
+  text-align: left;
+  font-size: 15px;
+  color: var(--vd-ink-secondary);
+}
+
+.vdash h2 {
+  margin: 0;
+  color: var(--vd-ink);
+}
+
+.vdash__subtitle {
+  margin: 4px 0 0;
+  color: var(--vd-muted);
+}
+
+/* Filters: one row above everything they control. */
+.vdash__filters {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16px;
+  margin: 20px 0;
+}
+
+.vdash select,
+.vdash__toggle button {
+  font: inherit;
+  color: var(--vd-ink);
+  background: var(--vd-surface);
+  border: 1px solid var(--vd-border);
+  border-radius: 8px;
+  padding: 6px 12px;
+  cursor: pointer;
+}
+
+.vdash__toggle {
+  display: inline-flex;
+}
+
+.vdash__toggle button:first-child {
+  border-radius: 8px 0 0 8px;
+}
+
+.vdash__toggle button:last-child {
+  border-radius: 0 8px 8px 0;
+  border-left-width: 0;
+}
+
+.vdash__toggle button[aria-pressed='true'] {
+  background: var(--vd-series);
+  border-color: var(--vd-series);
+  color: #fff;
+}
+
+.vdash select:focus-visible,
+.vdash__toggle button:focus-visible {
+  outline: 2px solid var(--vd-series);
+  outline-offset: 2px;
+}
+
+/* Cards */
+.card {
+  background: var(--vd-surface);
+  border: 1px solid var(--vd-border);
+  border-radius: 12px;
+  padding: 16px 20px;
+}
+
+.card h3 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--vd-ink);
+}
+
+.card__subtitle {
+  margin: 2px 0 12px;
+  font-size: 13px;
+  color: var(--vd-muted);
+}
+
+/* Headline numbers */
+.vdash__tiles {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.stat-tile__label {
+  margin: 0;
+  font-size: 13px;
+  color: var(--vd-muted);
+}
+
+.stat-tile__value {
+  margin: 4px 0;
+  font-size: 30px;
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--vd-ink);
+}
+
+.stat-tile__delta {
+  margin: 0;
+  font-size: 13px;
+  color: var(--vd-muted);
+}
+
+.stat-tile__delta--up {
+  color: var(--vd-good);
+}
+
+.stat-tile__delta--down {
+  color: var(--vd-critical);
+}
+
+/* Charts */
+.vdash__charts {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.card--wide {
+  grid-column: 1 / -1;
+}
+
+/* Height includes the axis labels, so nothing inside the chart gets cut off. */
+.chart-box {
+  position: relative;
+  height: 280px;
+}
+
+@media (max-width: 800px) {
+  .vdash {
+    padding: 16px 12px 40px;
+  }
+
+  .vdash__charts {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+/* Table view */
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.data-table caption {
+  margin-bottom: 8px;
+  text-align: left;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--vd-ink);
+}
+
+.data-table th,
+.data-table td {
+  padding: 8px 4px;
+  text-align: left;
+  border-bottom: 1px solid var(--vd-grid, var(--vd-border));
+}
+
+.data-table th {
+  font-weight: 500;
+  color: var(--vd-muted);
+}
+
+.data-table td {
+  color: var(--vd-ink);
+}
+
+.data-table .data-table__number {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
