@@ -10,8 +10,11 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@yudiel/react-qr-scanner": "^2.6.0",
     "react": "^19.2.8",
-    "react-dom": "^19.2.8"
+    "react-dom": "^19.2.8",
+    "react-router-dom": "^7.18.4",
+    "socket.io-client": "^4.8.4"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
